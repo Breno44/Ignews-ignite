@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { GetStaticProps } from "next";
-import { useSession } from "next-auth/react"";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -23,8 +24,8 @@ export default function PostPreview({ post }: PostPreviewProps) {
   const router = useRouter();
 
   useEffect(() => {
-    if(session?.activeSubscription) {
-      router.push(`/posts/${post.slug}`)
+    if (session?.activeSubscription) {
+      router.push(`/posts/${post.slug}`);
     }
   }, [session]);
 
